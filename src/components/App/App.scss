@@ -1,5 +1,6 @@
 #root {
   max-width: 1280px;
+  width: 600px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -8,6 +9,12 @@
 h1{
   color:#BB4915;
 }
+
+.container-logo{
+  display: flex;
+  justify-content: center;
+} 
+
 .card {
   padding: 2em;
 }

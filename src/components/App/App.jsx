@@ -12,7 +12,9 @@ function App() {
   return (
     <div className="App">
       <NavLink to="/">
-        <img src={logo} className="logo" alt="logo" />
+        <div className="container-logo">
+          <img src={logo} className="logo" alt="logo" />
+        </div>
       </NavLink>
       <Routes>
         <Route path="/" element={<Home />} />

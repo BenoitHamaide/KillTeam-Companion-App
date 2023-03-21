@@ -18,6 +18,8 @@
         "react"
     ],
     "rules": {
+      "arrow-parens":"off",
+      "no-const-assign" :"off",
       "react/prop-types":"off",
       "max-len":"off",
       "react/jsx-curly-brace-presence": "off",
