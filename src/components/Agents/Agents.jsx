@@ -8,6 +8,7 @@ function Agents() {
       <ul>
         {Agents.Agents.map((agent) => (
           <AgentsCaract key={agent.id} {...agent} />
+
         ))}
       </ul>
     </div>
