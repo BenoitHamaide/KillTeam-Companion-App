@@ -19,26 +19,29 @@ function AgentsCaract({
   }
   return (
     <div className="card">
-      <h2>{name}</h2>
-      <img src={`../src/${picture}`} alt="agent" />
+      <div className="header">
+        <h2>{name}</h2>
+        <img src={`../src/${picture}`} alt="agent" />
+      </div>
       <div className="caract">
-        <p>M<span>{Mouvement}</span></p>
-        <p>LPA<span>{LimitePointAction}</span></p>
-        <p>AG<span>{Activationgroupe}</span></p>
-        <p>DF<span>{Defense}</span></p>
-        <p>SVG<span>{Sauvegarde}</span></p>
-        <p>PV<span>{incrementePv}</span></p>
+        <p title="mouvement">M<span>{Mouvement}</span></p>
+        <p title="limite point d'action">LPA<span>{LimitePointAction}</span></p>
+        <p title="activation de groupe">AG<span>{Activationgroupe}</span></p>
+        <p title="défense">DF<span>{Defense}</span></p>
+        <p title="sauvegarde">SVG<span>{Sauvegarde}</span></p>
+        <p title="points de vie">PV<span>{incrementePv}</span></p>
       </div>
       <div className="buttonCounter">
-        <button onClick={() => addPv(incrementePv)}> + </button>
-        <button onClick={() => removePv(incrementePv)}> - </button>
+        <button title="augmente pv" onClick={() => addPv(incrementePv)}> + </button>
+        <button title="réduire pv" onClick={() => removePv(incrementePv)}> - </button>
       </div>
-      <p>{ArmeCT}</p>
-      <p>{ArmeCC}</p>
-      <p>{ArmeCC2}</p>
-
+      <p title="arme de tir">{ArmeCT}</p>
+      <p title="arme de corps a corps">{ArmeCC}</p>
+      <p title="arme de corps a corps">{ArmeCC2}</p>
       <p>{Aptitudes}</p>
-      <p>{Traits}</p>
+      <div className="keyword">
+        <p>{Traits}</p>
+      </div>
     </div>
   );
 }
