@@ -2,6 +2,7 @@
     border: 2px solid #BB4915;
     border-radius: 10px;
     margin-bottom: 10px;
+    padding-left: 0;
 }
 
 .header{
@@ -123,4 +124,7 @@
             font-weight: bold;
         }
     }
+}
+ul{
+padding-left: 0;
 }
