@@ -7,9 +7,10 @@ Un companion App pour killTeam.
 
 # 3. Fonctionnalités 
     -Compteurs d'incrémentation et de décrémentation pour gerer les PV
-    -détails des capacité au survol
+    -En fonction du nbr de pv, changement de classe et caractéristique
+    -détails des aptitudes au clique 
     -affichage du status blessé si perte de pv a plus de 50%
-    - réorganisation des éléments de cards
+    -réorganisation des éléments de cards
     -version mobile
 
 ## Affiche les stats de la team
