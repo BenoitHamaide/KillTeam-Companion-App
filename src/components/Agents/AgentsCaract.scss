@@ -3,3 +3,29 @@
     border-radius: 5px;
     margin-bottom: 10px;
 }
+
+.caract{
+    display: flex;
+    justify-content: space-around;
+    background-color: #BB4915;
+    margin: 10px 0 15px 0;
+    padding: 1px;
+    p{
+        display: flex;
+        flex-direction: column;
+        span{
+            color: black;
+            font-weight: bold;
+        }
+    }
+}
+
+.buttonCounter{
+    display: flex;
+    justify-content: center;
+    button{
+        margin: 0 10px;
+        color: #BB4915;
+        font-size: larger;
+    }
+}
