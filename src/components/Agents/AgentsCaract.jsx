@@ -38,7 +38,7 @@ function AgentsCaract({
       </div>
       <div className={isActive ? "actif" : "inactif"}>
         <button type="text" onClick={handleClick}>
-          {isActive ? "Actif" : "Inactif"}
+          {isActive ? "Active" : "Inactif"}
         </button>
       </div>
       {/* caracteristique d'agent */}

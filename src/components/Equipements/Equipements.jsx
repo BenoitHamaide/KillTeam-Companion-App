@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import AgentEquipementAffremite from '../AgentEquipement/AgentEquipementAffremite';
 import AgentEquipementDardezieux from '../AgentEquipement/AgentEquipementDardezieux';
+import './Equipements.scss';
 
 function Equipements() {
 
@@ -19,29 +20,39 @@ function Equipements() {
     <div>
       <h1>Equipements</h1>
 
-      <div>
-        <input
-          type="checkbox"
-          checked={isAffremiteChecked}
-          onChange={handleAffremiteCheckboxChange}
-        />
-        Affremite
-        {isAffremiteChecked && (
-          <AgentEquipementAffremite />
-        )}
+      <div className="equipementsChoice">
+        <label htmlFor="affremite-checkbox" className="checkbox-label">
+          <input
+            id="affremite-checkbox"
+            className="roundOne"
+            type="checkbox"
+            checked={isAffremiteChecked}
+            onChange={handleAffremiteCheckboxChange}
+          />
+          Affremite
+        </label>
+
+        <label htmlFor="dardezieux-checkbox" className="checkbox-label">
+          <input
+            id="dardezieux-checkbox"
+            className="roundOne"
+            type="checkbox"
+            checked={isDardezieuxChecked}
+            onChange={handleDardezieuxCheckboxChange}
+          />
+          Dardezieux
+        </label>
       </div>
 
       <div>
-        <input
-          type="checkbox"
-          checked={isDardezieuxChecked}
-          onChange={handleDardezieuxCheckboxChange}
-        />
-        Dardezieux
         {isDardezieuxChecked && (
-          <AgentEquipementDardezieux />
+        <AgentEquipementDardezieux />
+        )}
+        {isAffremiteChecked && (
+        <AgentEquipementAffremite />
         )}
       </div>
+
     </div>
   );
 }

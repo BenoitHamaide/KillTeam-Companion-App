@@ -12,6 +12,7 @@ Un companion App pour killTeam.
     -affichage du status blessé si perte de pv a plus de 50% ok
     -réorganisation des éléments de cards
     -version mobile
+    -bouton actif/inactif
 
 ## Affiche les stats de la team
     -via les caractéristiques ok

@@ -130,12 +130,16 @@ padding-left: 0;
 }
 
 .actif{
+    
   button{
     background: green;
+    transition: 1s;
   }
 }
 .inactif{
+    
     button{
         background: red;
+        transition: 1s;
       }
 }
