@@ -1,29 +1,49 @@
 import { useState } from 'react';
 import AgentEquipementAffremite from '../AgentEquipement/AgentEquipementAffremite';
+import AgentEquipementDardezieux from '../AgentEquipement/AgentEquipementDardezieux';
 
 function Equipements() {
 
-  const [isChecked, setIsChecked] = useState(false);
+  const [isAffremiteChecked, setIsAffremiteChecked] = useState(false);
+  const [isDardezieuxChecked, setIsDardezieuxChecked] = useState(false);
 
-  const handleCheckboxChange = (event) => {
-    setIsChecked(event.target.checked);
+  const handleAffremiteCheckboxChange = (event) => {
+    setIsAffremiteChecked(event.target.checked);
+  };
+
+  const handleDardezieuxCheckboxChange = (event) => {
+    setIsDardezieuxChecked(event.target.checked);
   };
 
   return (
     <div>
       <h1>Equipements</h1>
+
       <div>
         <input
           type="checkbox"
-          checked={isChecked}
-          onChange={handleCheckboxChange}
+          checked={isAffremiteChecked}
+          onChange={handleAffremiteCheckboxChange}
         />
         Affremite
+        {isAffremiteChecked && (
+          <AgentEquipementAffremite />
+        )}
       </div>
-      {isChecked && (
-      <AgentEquipementAffremite />
-      )}
+
+      <div>
+        <input
+          type="checkbox"
+          checked={isDardezieuxChecked}
+          onChange={handleDardezieuxCheckboxChange}
+        />
+        Dardezieux
+        {isDardezieuxChecked && (
+          <AgentEquipementDardezieux />
+        )}
+      </div>
     </div>
   );
 }
+
 export default Equipements;
