@@ -58,10 +58,22 @@ export default {
   ],
   Equipements: [
     {
+      id: 20,
       name: "Affremite",
+      picture: "assets/img/affremite.png",
       Mouvement: 3,
       LimitePointAction: 2,
       Activationgroupe: 2,
+      Defense: 2,
+      Sauvegarde: "5+",
+      PV: 2,
+      Aptitudes: "Vermine Mutante, *Succion",
+      Traits: "Chaos, Vol, Nurgle, Varioleux Geller, Vermine Mutante, Affremite",
+      ArmeCCName: "Proboscis suceur de sang",
+      ArmeCCA: 2,
+      ArmeCCTC: 4,
+      ArmeCCD: "2/3",
+      ArmeCCRS: "Perforant",
     },
   ],
 };
