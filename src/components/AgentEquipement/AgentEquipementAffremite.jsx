@@ -8,6 +8,7 @@ function AgentEquipementAffremite() {
 
   const mouvement = incrementePv < Pv / 2 ? equipements[0].Mouvement - 1 : equipements[0].Mouvement;
   const armeCCTC = incrementePv < Pv / 2 ? equipements[0].ArmeCCTC + 1 : equipements[0].ArmeCCTC;
+  const [isActive, setIsActive] = useState(true);
 
   const addPv = () => {
     if (incrementePv < Pv) {
@@ -21,6 +22,9 @@ function AgentEquipementAffremite() {
     }
   };
 
+  function handleClick() {
+    setIsActive(!isActive);
+  }
   return (
     <div>
 
@@ -33,7 +37,11 @@ function AgentEquipementAffremite() {
           <h2>{equipements[0].name}</h2>
           <img src={`../src/${equipements[0].picture}`} alt="agent" />
         </div>
-
+        <div className={isActive ? "actif" : "inactif"}>
+          <button type="text" onClick={handleClick}>
+            {isActive ? "Actif" : "Inactif"}
+          </button>
+        </div>
         {/* caracteristique d'agent */}
 
         <div className={incrementePv === 0 ? "dead" : (Math.max(incrementePv, 1) < (Pv / 2) && Pv > 1) ? "blessé" : "caract"}>

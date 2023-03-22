@@ -128,3 +128,14 @@
 ul{
 padding-left: 0;
 }
+
+.actif{
+  button{
+    background: green;
+  }
+}
+.inactif{
+    button{
+        background: red;
+      }
+}

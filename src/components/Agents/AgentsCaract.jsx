@@ -11,6 +11,7 @@ function AgentsCaract({
   const armeCTTC = incrementePv < PV / 2 ? ArmeCTTC + 1 : ArmeCTTC;
   const armeCCTC = incrementePv < PV / 2 ? ArmeCCTC + 1 : ArmeCCTC;
   const armeCC2TC = incrementePv < PV / 2 ? ArmeCC2TC + 1 : ArmeCC2TC;
+  const [isActive, setIsActive] = useState(true);
   // fonctions d'incrémentation / décrémentation
   function addPv() {
     if (incrementePv < PV) {
@@ -22,6 +23,10 @@ function AgentsCaract({
       setIncrementePv(incrementePv - 1);
     }
   }
+
+  function handleClick() {
+    setIsActive(!isActive);
+  }
   return (
     <div className="card">
 
@@ -31,7 +36,11 @@ function AgentsCaract({
         <h2>{name}</h2>
         <img src={`../src/${picture}`} alt="agent" />
       </div>
-
+      <div className={isActive ? "actif" : "inactif"}>
+        <button type="text" onClick={handleClick}>
+          {isActive ? "Actif" : "Inactif"}
+        </button>
+      </div>
       {/* caracteristique d'agent */}
 
       <div className={incrementePv === 0 ? "dead" : (Math.max(incrementePv, 1) < (PV / 2) && PV > 1) ? "blessé" : "caract"}>

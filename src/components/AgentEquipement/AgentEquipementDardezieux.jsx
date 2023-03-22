@@ -9,6 +9,7 @@ function AgentEquipementDardezieux() {
   const mouvement = incrementePv < Pv / 2 ? equipements[1].Mouvement - 1 : equipements[1].Mouvement;
   const armeCTTC = incrementePv < Pv / 2 ? equipements[1].ArmeCTTC + 1 : equipements[1].ArmeCTTC;
   const armeCCTC = incrementePv < Pv / 2 ? equipements[1].ArmeCCTC + 1 : equipements[1].ArmeCCTC;
+  const [isActive, setIsActive] = useState(true);
 
   const addPv = () => {
     if (incrementePv < Pv) {
@@ -22,6 +23,9 @@ function AgentEquipementDardezieux() {
     }
   };
 
+  function handleClick() {
+    setIsActive(!isActive);
+  }
   return (
     <div>
 
@@ -34,7 +38,11 @@ function AgentEquipementDardezieux() {
           <h2>{equipements[1].name}</h2>
           <img src={`../src/${equipements[1].picture}`} alt="agent" />
         </div>
-
+        <div className={isActive ? "actif" : "inactif"}>
+          <button type="text" onClick={handleClick}>
+            {isActive ? "Actif" : "Inactif"}
+          </button>
+        </div>
         {/* caracteristique d'agent */}
 
         <div className={incrementePv === 0 ? "dead" : (Math.max(incrementePv, 1) < (Pv / 2) && Pv > 1) ? "blessé" : "caract"}>
