@@ -56,4 +56,12 @@ export default {
       ArmeCC2RS: "Balayage",
     },
   ],
+  Equipements: [
+    {
+      name: "Affremite",
+      Mouvement: 3,
+      LimitePointAction: 2,
+      Activationgroupe: 2,
+    },
+  ],
 };
