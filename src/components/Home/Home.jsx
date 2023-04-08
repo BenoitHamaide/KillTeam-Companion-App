@@ -1,7 +1,6 @@
 import Agents from "../Agents/Agents";
 import Equipements from "../Equipements/Equipements";
 
-
 function Home() {
   return (
     <div className="App">

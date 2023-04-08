@@ -36,6 +36,10 @@
     }
 }
 
+.hide {
+    display: none;
+  }
+
 .caract{
     display: flex;
     justify-content: space-around;
@@ -111,7 +115,7 @@
     }
 }
 
-.armeTirCaract, .armeCcCaract, .armeCc2Caract{
+.armeTirCaract, .armeTirCaract2, .armeCcCaract, .armeCcCaract2{
     display: flex;
     justify-content: space-around;   
     margin-top: 10px;
@@ -120,9 +124,12 @@
         flex-direction: column;
         margin: 0;
         span{
-            color: black;
+            color: rgb(187, 185, 185);
             font-weight: bold;
         }
+    }
+    &.hide{
+        display: none;
     }
 }
 ul{
@@ -142,4 +149,120 @@ padding-left: 0;
         background: red;
         transition: 1s;
       }
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?wa0718');
+    src:  url('fonts/icomoon.eot?wa0718#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?wa0718') format('truetype'),
+        url('fonts/icomoon.woff?wa0718') format('woff'),
+        url('fonts/icomoon.svg?wa0718#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-target:before {content: "\e900";}
+.icon-view:before 	{content: "\e901";}
+.icon-edit:before 	{content: "\e902";}
+.icon-print:before 	{content: "\e903";}
+.icon-swords:before {content: "\e904";}
+.icon-delete:before {content: "\e905";}
+.icon-left:before 	{content: "\e906";}
+.icon-right:before 	{content: "\e907";}
+.icon-copy:before 	{content: "\e908";}
+.icon-user:before 	{content: "\e909";}
+.icon-admin:before 	{content: "\e90a";}
+.icon-circle:before {content: "\e90b";}
+.icon-hexagon:before{content: "\e90c";}
+.icon-square:before {content: "\e90d";}
+.icon-triangle:before{content: "\e90e";}
+.icon-drag-drop:before {content: "\e911";}
+.icon-up:before 	{content: "\e912";}
+.icon-close:before 	{content: "\e913";}
+.icon-rotate:before {content: "\e914";}
+.icon-expand:before { content: "\e915";}
+.icon-collapse:before {content: "\e916";}
+.icon-burger:before {content: "\e917";}
+.icon-specialiste1:before {content: "\e918";}
+.icon-specialiste2:before {content: "\e919";}
+.icon-specialiste4:before {content: "\e91a";}
+.icon-specialiste3:before {content: "\e91b";}
+.icon-gear:before {content: "\e91d";}
+.icon-list:before {content: "\e91f";}
+.icon-copyregular:before {content: "\e91e";}
+.icon-eye:before {content: "\e9ce";}
+.icon-eye-blocked:before {content: "\e9d1";}
+
+.icon-ktb:before {content: "\e91c";  color: #fff;}
+
+.icon-circle 		{-webkit-text-stroke: 1px black;}
+.icon-triangle 		{-webkit-text-stroke: 1px grey;}
+.icon-drag-drop 	{ cursor:grab;}
+
+.symbole {
+    display:inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(img/distance.svg);
+    background-size: 48px 24px;
+    vertical-align: top;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hideNumber .symbole {
+    background-position-y: -12px;
+}
+
+.symbole-triangle {background-position-x: 0;}
+.symbole-circle {background-position-x: -12px;}
+.symbole-square {background-position-x: -24px;}
+.symbole-hexagon {background-position-x: -36px;}
+
+
+.expand-button {
+    float:right;
+}
+
+.expand-title {
+    cursor:pointer;
+}
+
+.icon-hexagon, .icon-square, .icon-triangle, .icon-circle { position:relative;}
+.icon-hexagon:after,
+.icon-square:after,
+.icon-triangle:after,
+.icon-circle:after	{position: absolute; top:2px; left: 3px; color: #FFF; font-size: 0.8em; font-family: arial, sans-serif; -webkit-text-stroke: 0;}
+
+.icon-hexagon:after	{content: "6"; left: 4px; font-size: 0.7em;}
+.icon-triangle:after{content: "1"; left: 4px; font-size: 0.7em;}
+.icon-square:after	{content: "3"; left: 2px;}
+.icon-circle:after	{content: "2"; color: #000;}
+
+.pv_checkbox {display:none;}
+.pv_checkbox .icon-square:after	{content:""}
+.pv_checkbox .icon-square{
+    color:#FFF; 
+    -webkit-text-stroke: 1px #999; 
+    margin:0 1px;
+    font-size:1.2em;
+    display:inline-block;
 }
