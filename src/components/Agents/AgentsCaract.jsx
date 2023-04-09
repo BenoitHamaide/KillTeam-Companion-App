@@ -61,20 +61,20 @@ function AgentsCaract({
       </div>
 
       {/* caracteristique arme de tir 1 */}
-
+      <p className="armeName" title="arme de tir">{armeTir1Name}</p>
+      {armeTir1Name && (
       <div className="armeTirCaract">
-        <p title="arme de tir">{armeTir1Name}</p>
         <p>A<span>{armeTir1Attaque}</span></p>
         <p>T/C<span>{armeCTTC}+</span></p>
         <p>D<span>{armeTir1Degat}</span></p>
         <p>RS<span>{armeTir1Rs}</span></p>
         <p>!<span>{armeTir1Critique}</span></p>
       </div>
-
+      )}
       {/* caracteristique arme de tir 2 */}
+      <p className="armeName" title="arme de tir">{armeTir2Name}</p>
       {armeTir2Name && (
       <div className="armeTirCaract2 ">
-        <p title="arme de tir">{armeTir2Name}</p>
         <p>A<span>{armeTir2Attaque}</span></p>
         <p>T/C<span>{armeCT2TC}+</span></p>
         <p>D<span>{armeTir2Degat}</span></p>
@@ -84,9 +84,8 @@ function AgentsCaract({
       )}
 
       {/* caracteristique arme de corps a corp 1 */}
-
+      <p className="armeName" title="arme de corps a corps">{armeCorp1Name}</p>
       <div className="armeCcCaract">
-        <p title="arme de corps a corps">{armeCorp1Name}</p>
         <p>A<span>{armeCorp1Attaque}</span></p>
         <p>T/C<span>{armeCCTC}+</span></p>
         <p>D<span>{armeCorp1Degat}</span></p>
@@ -95,9 +94,9 @@ function AgentsCaract({
       </div>
 
       {/* caracteristique arme de corps a corp 2 */}
+      <p className="armeName" title="arme de corps a corps">{armeCorp2Name}</p>
       {armeCorp2Name && (
       <div className="armeCcCaract2">
-        <p title="arme de corps a corps">{armeCorp2Name}</p>
         <p>A<span>{armeCorp2Attaque}</span></p>
         <p>T/C<span>{armeCC2TC}+</span></p>
         <p>D<span>{armeCorp2Degat}</span></p>
