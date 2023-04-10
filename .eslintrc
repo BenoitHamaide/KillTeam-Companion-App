@@ -18,6 +18,7 @@
         "react"
     ],
     "rules": {
+      "jsx-a11y/label-has-associated-control":"off",
       "no-nested-ternary":"off",
       "arrow-parens":"off",
       "no-const-assign" :"off",
