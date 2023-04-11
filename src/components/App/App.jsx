@@ -1,10 +1,8 @@
 import { Routes, Route, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import Home from "../Home/Home";
 import NotFound from '../../Pages/NotFound';
 import "./App.scss";
-
-
+import Auth from "../../Auth/Auth";
 
 
 function App() {
@@ -17,7 +15,7 @@ function App() {
         </div>
       </NavLink>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Auth />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
