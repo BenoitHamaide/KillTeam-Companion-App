@@ -6,7 +6,7 @@ import jwt_decode from "jwt-decode";
 import Home from "../components/Home/Home";
 
 const api = axios.create({
-  baseURL: "http://localhost:8055",
+  baseURL: "benoithamaide-server.eddi.cloud",
 });
 
 function Auth() {

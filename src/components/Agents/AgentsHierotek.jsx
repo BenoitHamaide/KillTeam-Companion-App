@@ -5,7 +5,7 @@ import AgentsCaract from "./AgentsCaract";
 import Equipements from "./Equipements";
 
 function AgentsHierotek() {
-  const API_URL = "http://localhost:8055/items/CercleHierotek";
+  const API_URL = "benoithamaide-server.eddi.cloud/items/CercleHierotek";
   const [data, setData] = useState([]);
   const [isCheckedEquipement, setIsCheckedEquipement] = useState(false);
 
