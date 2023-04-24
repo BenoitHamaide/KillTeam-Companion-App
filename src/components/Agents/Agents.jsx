@@ -4,7 +4,7 @@ import axios from "axios";
 import AgentsCaract from "./AgentsCaract";
 
 function Agents() {
-  const API_URL = "benoithamaide-server.eddi.cloud/items/Agents";
+  const API_URL = "http://localhost:8055/items/Agents";
   const [data, setData] = useState([]);
 
   useEffect(() => {

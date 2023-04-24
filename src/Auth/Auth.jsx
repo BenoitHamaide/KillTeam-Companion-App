@@ -1,17 +1,23 @@
 import axios from "axios";
-import {
-  useState, useCallback, useRef, useEffect,
-} from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import Home from "../components/Home/Home";
 
 const api = axios.create({
-  baseURL: "benoithamaide-server.eddi.cloud",
+  baseURL: "http://localhost:8055",
+});
+
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem("access_token");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
 });
 
 function Auth() {
-  const email = useRef('');
-  const password = useRef('');
+  const email = useRef("");
+  const password = useRef("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogout = useCallback(() => {
@@ -21,18 +27,19 @@ function Auth() {
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault();
-    api.post("/auth/login", {
-      email: `${email.current}`,
-      password: `${password.current}`,
-    })
+    api
+      .post("/auth/login", {
+        email: `${email.current}`,
+        password: `${password.current}`,
+      })
       .then((response) => {
         const token = response.data.data.access_token; // Récupération du token
-        api.defaults.headers.common.Authorization = `Bearer ${token}`;
         console.log(`token: ${token}`);
         const decoded = jwt_decode(token);
         console.log(decoded);
         console.log(decoded.email);
         localStorage.setItem("access_token", token); // Stockage du token dans le local storage
+        api.defaults.headers.common.Authorization = `Bearer ${token}`;
         setIsAuthenticated(true);
       })
       .catch((error) => console.log(error));
@@ -41,32 +48,32 @@ function Auth() {
   useEffect(() => {
     const token = localStorage.getItem("access_token");
     if (token) {
-      api.defaults.headers.common.Authorization = `Bearer ${token}`;
       setIsAuthenticated(true);
     }
   }, []);
-
 
   const handleEmailChange = useCallback(
     (event) => {
       email.current = event.target.value.trim();
     },
-    [],
+    []
   );
 
   const handlePasswordChange = useCallback(
     (event) => {
       password.current = event.target.value.trim();
     },
-    [],
+    []
   );
 
   return (
     <div>
-
-      { isAuthenticated ? (
+      {isAuthenticated ? (
         <div>
-          <p>Utilisateur {jwt_decode(localStorage.getItem("access_token"))?.email} connecté</p>
+          <p>
+            Utilisateur{" "}
+            {jwt_decode(localStorage.getItem("access_token"))?.email} connecté
+          </p>
           <button onClick={handleLogout}>Se déconnecter</button>
           <Home />
         </div>
@@ -97,5 +104,4 @@ function Auth() {
 }
 
 export default Auth;
-
 

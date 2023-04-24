@@ -35,7 +35,7 @@ function AgentsCaract({
 
         <div className={incrementePv === 0 ? "header-dead" : "header"}>
           <h2>{name}</h2>
-          <img src={`benoithamaide-server.eddi.cloud/assets/${thumbnail}`} alt="agent" />
+          <img src={`http://localhost:8055/assets/${thumbnail}`} alt="agent" />
         </div>
         <div className={isActive ? "actif" : "inactif"}>
           <button type="text" onClick={handleClick}>
