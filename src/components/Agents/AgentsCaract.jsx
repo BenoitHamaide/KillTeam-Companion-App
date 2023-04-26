@@ -35,7 +35,7 @@ function AgentsCaract({
 
         <div className={incrementePv === 0 ? "header-dead" : "header"}>
           <h2>{name}</h2>
-          <img src={`http://localhost:8055/assets/${thumbnail}`} alt="agent" />
+          <img src={`https://killteamcompanionappback-production.up.railway.app/assets/${thumbnail}`} alt="agent" />
         </div>
         <div className={isActive ? "actif" : "inactif"}>
           <button type="text" onClick={handleClick}>

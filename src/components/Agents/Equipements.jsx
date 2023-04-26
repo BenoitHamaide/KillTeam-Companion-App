@@ -3,7 +3,7 @@ import axios from "axios";
 import './AgentsCaract.scss';
 
 function Equipements() {
-  const API_HIEROTEK_EQUIPEMENTS = "http://localhost:8055/items/HierotekEquipements";
+  const API_HIEROTEK_EQUIPEMENTS = "https://killteamcompanionappback-production.up.railway.app/items/HierotekEquipements";
   const [data, setData] = useState([]);
 
   useEffect(() => {

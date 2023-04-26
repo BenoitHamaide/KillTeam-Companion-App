@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState, useCallback, useRef, useEffect } from "react";
-import jwt_decode from "jwt-decode";
+
 import Home from "../components/Home/Home";
 
 const api = axios.create({
-  baseURL: "http://localhost:8055",
+  baseURL: "https://killteamcompanionappback-production.up.railway.app",
 });
 
 api.interceptors.request.use((config) => {
@@ -34,10 +34,8 @@ function Auth() {
       })
       .then((response) => {
         const token = response.data.data.access_token; // Récupération du token
-        console.log(`token: ${token}`);
-        const decoded = jwt_decode(token);
-        console.log(decoded);
-        console.log(decoded.email);
+       
+      
         localStorage.setItem("access_token", token); // Stockage du token dans le local storage
         api.defaults.headers.common.Authorization = `Bearer ${token}`;
         setIsAuthenticated(true);
@@ -72,7 +70,7 @@ function Auth() {
         <div>
           <p>
             Utilisateur{" "}
-            {jwt_decode(localStorage.getItem("access_token"))?.email} connecté
+            {(localStorage.getItem("access_token"))?.email} connecté
           </p>
           <button onClick={handleLogout}>Se déconnecter</button>
           <Home />
