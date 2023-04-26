@@ -13,7 +13,7 @@ function App() {
         <div className="container-logo">
           <img src={logo} className="logo" alt="logo" />
         </div>
-        <h2>Companion App</h2>
+        <h1>Companion App</h1>
       </NavLink>
       <Routes>
         <Route path="/" element={<Auth />} />
