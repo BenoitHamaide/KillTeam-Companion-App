@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Agents from "../Agents/Agents";
 import AgentsHierotek from "../Agents/AgentsHierotek";
+import './Home.scss';
+import Auth from "../../Auth/Auth";
 
 function Home() {
   const [isChecked1, setIsChecked1] = useState(false);
@@ -16,8 +18,7 @@ function Home() {
 
   return (
     <div className="App">
-      <h2>Companion App</h2>
-      <div>
+      <div className="checkbox">
         <label>
           <input
             type="checkbox"

@@ -1,6 +1,8 @@
 import axios from "axios";
-import { useState, useCallback, useRef, useEffect } from "react";
-
+import {
+  useState, useCallback, useRef, useEffect,
+} from "react";
+import './Auth.scss';
 import Home from "../components/Home/Home";
 
 const api = axios.create({
@@ -34,8 +36,8 @@ function Auth() {
       })
       .then((response) => {
         const token = response.data.data.access_token; // Récupération du token
-       
-      
+
+
         localStorage.setItem("access_token", token); // Stockage du token dans le local storage
         api.defaults.headers.common.Authorization = `Bearer ${token}`;
         setIsAuthenticated(true);
@@ -54,48 +56,51 @@ function Auth() {
     (event) => {
       email.current = event.target.value.trim();
     },
-    []
+    [],
   );
 
   const handlePasswordChange = useCallback(
     (event) => {
       password.current = event.target.value.trim();
     },
-    []
+    [],
   );
 
   return (
     <div>
       {isAuthenticated ? (
         <div>
-          <p>
+          <h3>
             Utilisateur{" "}
             {(localStorage.getItem("access_token"))?.email} connecté
-          </p>
-          <button onClick={handleLogout}>Se déconnecter</button>
+          </h3>
+          <button className="buttonConnexion" onClick={handleLogout}>Se déconnecter</button>
           <Home />
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
-          <p>S'identifier</p>
-          <label>
-            Nom d'utilisateur:
-            <input
-              type="email"
-              defaultValue={email.current}
-              onChange={handleEmailChange}
-            />
-          </label>
-          <label>
-            Mot de passe:
-            <input
-              type="password"
-              defaultValue={password.current}
-              onChange={handlePasswordChange}
-            />
-          </label>
-          <button type="submit">Submit</button>
+          <h2>S'identifier</h2>
+          <div className="auth">
+            <label>
+              <p>Nom d'utilisateur:</p>
+              <input
+                type="email"
+                defaultValue={email.current}
+                onChange={handleEmailChange}
+              />
+            </label>
+            <label>
+              <p>Mot de passe:</p>
+              <input
+                type="password"
+                defaultValue={password.current}
+                onChange={handlePasswordChange}
+              />
+            </label>
+            <button className="buttonConnexion" type="submit">Connexion</button>
+          </div>
         </form>
+
       )}
     </div>
   );

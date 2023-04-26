@@ -27,6 +27,7 @@ function AgentsCaract({
   function handleClick() {
     setIsActive(!isActive);
   }
+
   return (
     <div>
       <div className="card">
@@ -45,7 +46,8 @@ function AgentsCaract({
         {/* caracteristique d'agent */}
 
         <div className={incrementePv === 0 ? "dead" : (Math.max(incrementePv, 1) < (pv / 2) && pv > 1) ? "blessé" : "caract"}>
-          <p title="mouvement">M<span>{Mouvement}</span></p>
+          <p title="mouvement">M<span><div className="contener_move">{Mouvement}<div className="rond_blanc"> </div> </div></span></p>
+
           <p title="limite point d'action">LPA<span>{lpa}</span></p>
           <p title="activation de groupe">AG<span>{ag}</span></p>
           <p title="défense">DF<span>{defense}</span></p>
@@ -67,7 +69,17 @@ function AgentsCaract({
           <p>A<span>{armeTir1Attaque}</span></p>
           <p>T/C<span>{armeCTTC}+</span></p>
           <p>D<span>{armeTir1Degat}</span></p>
-          <p>RS<span>{armeTir1Rs}</span></p>
+          <div className="contener-bleu">
+            <p>RS</p>
+            {armeTir1Rs.includes("Port 3") ? (
+              <div className="align">
+                <p>Port</p>
+                <span className="carre-bleu"> </span>
+              </div>
+            ) : (
+              <span>{armeTir1Rs}</span>
+            )}
+          </div>
           <p>!<span>{armeTir1Critique}</span></p>
         </div>
         )}
