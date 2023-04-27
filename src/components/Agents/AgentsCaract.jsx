@@ -69,17 +69,19 @@ function AgentsCaract({
           <p>A<span>{armeTir1Attaque}</span></p>
           <p>T/C<span>{armeCTTC}+</span></p>
           <p>D<span>{armeTir1Degat}</span></p>
-          <div className="contener-bleu">
-            <p>RS</p>
-            {armeTir1Rs.includes("Port 3") ? (
-              <div className="align">
-                <p>Port</p>
-                <span className="carre-bleu"> </span>
-              </div>
-            ) : (
-              <span>{armeTir1Rs}</span>
-            )}
-          </div>
+          {armeTir1Rs && (
+            <div className="contener-bleu">
+              <p>RS</p>
+              {armeTir1Rs.includes("Port 3") ? (
+                <div className="align">
+                  <p>Port</p>
+                  <span className="carre-bleu"> </span>
+                </div>
+              ) : (
+                <span>{armeTir1Rs}</span>
+              )}
+            </div>
+          )}
           <p>!<span>{armeTir1Critique}</span></p>
         </div>
         )}
@@ -119,14 +121,15 @@ function AgentsCaract({
 
         {actions && (
           <div>
-            <p>Actions</p>
+            <p className="actions">Actions</p>
             <p>{actions}</p>
           </div>
         )}
-        <p>Aptitudes</p>
-        <p>{aptitudes}</p>
-        <div className="keyword">
-          <p>{traits}</p>
+        <div>
+          <p className="aptitudes">Aptitudes</p>
+          <p>{aptitudes}</p>
+
+          <p className="traits">{traits}</p>
         </div>
       </div>
     </div>
